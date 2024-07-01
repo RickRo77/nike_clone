@@ -14,6 +14,7 @@ function Sidebar({ updateFilter }) {
         <select name="category" id="category" onChange={handleFilterChange}>
           <option value="">Select Category</option>
           <option value="Shoes">Shoes</option>
+          <option value="Clothing">Clothing</option>
           <option value="Apparel">Apparel</option>
         </select>
       </div>
