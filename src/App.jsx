@@ -1,31 +1,21 @@
 import { useState } from 'react';
+import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import './App.css';
-import MainDisp from './components/MainDisp';
-import Sidebar from './components/SideBar';
-import SearchBar from './components/SearchBar';
+import Favorites from './components/Favorites';
+import ProductPage from './components/ProductPage';
+import Navbar from './components/Navbar';
 
 function App() {
-  const [Filter, setFilter] = useState([new Map()]);
- 
-  const updateFilter = (key, value) => {
-    setFilter((prevFilter) => {
-      const newFilter = new Map(prevFilter[0]);
-      if (value) {
-        newFilter.set(key, value);
-      } else {
-        newFilter.delete(key);
-      }
-      return [newFilter];
-    });
-  };
-
-
   return (
-    <div className="App">
-      <Sidebar updateFilter={updateFilter} />
-      <SearchBar updateFilter={updateFilter}></SearchBar>
-      <MainDisp Filter={Filter} />
-    </div>
+    <Router>
+      <div className="App">
+        <Navbar></Navbar>
+        <Routes>
+          <Route exact path="/" element={<ProductPage></ProductPage>} />
+          <Route path="/favorites" element={<Favorites></Favorites>} />
+        </Routes>
+      </div>
+    </Router>
   );
 }
 
