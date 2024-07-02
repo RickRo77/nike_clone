@@ -2,10 +2,10 @@ import React from "react";
 import { useEffect,useState } from "react";
 
 
-export default function SearchBar({updateFilter}){
+export default function SearchBar({updateSearch}){
     const handleSearchChange = (e) => {
         const { name, value } = e.target;
-        updateFilter(name, value);
+        updateSearch(value);
     };
     
     return(

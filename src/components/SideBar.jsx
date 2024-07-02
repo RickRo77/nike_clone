@@ -1,43 +1,62 @@
 import React from 'react';
 
-function Sidebar({ updateFilter }) {
+function Sidebar({ updateFilter,Filter }) {
   const handleFilterChange = (e) => {
-    const { name, value } = e.target;
-    updateFilter(name, value);
+    updateFilter(e);
+    // console.log(Filter)
   };
 
   return (
     <div className="sidebar">
       <h2>Filters</h2>
       <div className="filter-group">
-        <label htmlFor="category">Category:</label>
-        <select name="category" id="category" onChange={handleFilterChange}>
-          <option value="">Select Category</option>
-          <option value="Shoes">Shoes</option>
-          <option value="Clothing">Clothing</option>
-          <option value="Apparel">Apparel</option>
-        </select>
+        <label>Category:</label>
+        <div>
+          <input type="checkbox" name="category" value="Shoes" onChange={handleFilterChange} />
+          <label>Shoes</label>
+        </div>
+        <div>
+          <input type="checkbox" name="category" value="Clothing" onChange={handleFilterChange} />
+          <label>Clothing</label>
+        </div>
+        <div>
+          <input type="checkbox" name="category" value="Apparel" onChange={handleFilterChange} />
+          <label>Apparel</label>
+        </div>
       </div>
       <div className="filter-group">
-        <label htmlFor="division">Division:</label>
-        <select name="division" id="division" onChange={handleFilterChange}>
-          <option value="">Select Division</option>
-          <option value="Men">Men</option>
-          <option value="Women">Women</option>
-        </select>
+        <label>Division:</label>
+        <div>
+          <input type="checkbox" name="division" value="Men" onChange={handleFilterChange} />
+          <label>Men</label>
+        </div>
+        <div>
+          <input type="checkbox" name="division" value="Women" onChange={handleFilterChange} />
+          <label>Women</label>
+        </div>
       </div>
       <div className="filter-group">
-        <label htmlFor="subCategory">subCategory:</label>
-        <select name="subCategory" id="subCategory" onChange={handleFilterChange}>
-          <option value="">Select Sub-Category</option>
-          <option value="Lifestyle">Lifestyle</option>
-          <option value="Basketball">Basketball</option>
-          <option value="Training & Gym">Training & Gym</option>
-          <option value="Clothing">Clothing</option>
-        </select>
+        <label>Sub-Category:</label>
+        <div>
+          <input type="checkbox" name="subCategory" value="Lifestyle" onChange={handleFilterChange} />
+          <label>Lifestyle</label>
+        </div>
+        <div>
+          <input type="checkbox" name="subCategory" value="Basketball" onChange={handleFilterChange} />
+          <label>Basketball</label>
+        </div>
+        <div>
+          <input type="checkbox" name="subCategory" value="Training & Gym" onChange={handleFilterChange} />
+          <label>Training & Gym</label>
+        </div>
+        <div>
+          <input type="checkbox" name="subCategory" value="Clothing" onChange={handleFilterChange} />
+          <label>Clothing</label>
+        </div>
       </div>
     </div>
   );
+
 }
 
 export default Sidebar;

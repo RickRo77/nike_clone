@@ -9,22 +9,19 @@ export default function MainDisp({ Filter }) {
 
   useEffect(() => {
     const matchesFilters = (product) => {
-      if (Filter.length === 0 || (Filter.length === 1 && Filter[0].size === 0)) {
-        return true; // Return true if there are no filters
-      }
-      for (let filter of Filter) {
-        for (let [key, value] of filter.entries()) {
-          if(key==='search')
+      if(Filter.category.length==0 || Filter.category.includes(product.category))
+        {
+          if(Filter.division.length==0 || Filter.division.includes(product.division))
             {
-              if(!product.productName.toLowerCase().includes(value.toLowerCase()))
-                return false;
+              if(Filter.subCategory.length==0 || Filter.subCategory.includes(product.subCategory))
+                {
+                  if(Filter.search.length==0 || product.productName.toLowerCase().includes(Filter.search[0].toLowerCase()))
+                    return true;
+                }
             }
-          else if (product[key] !== value) {
-            return false;
-          }
         }
-      }
-      return true;
+      else
+        return false
     };
 
     const newFilteredProducts = products.filter(matchesFilters);
