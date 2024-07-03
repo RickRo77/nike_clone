@@ -30,7 +30,7 @@ export default function MainDisp({ Filter }) {
 
 
   return (
-    <div>
+    <div style={{width:'70vw'}}>
       {filteredProducts.length > 0 ? (
         filteredProducts.map((product, index) => (
           <div key={index}>

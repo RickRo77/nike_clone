@@ -6,12 +6,49 @@ import ProductPage from './components/ProductPage';
 import Navbar from './components/Navbar';
 
 function App() {
+  const [Filter, setFilter] = useState(
+    {
+        division:[],
+        category:[],
+        subCategory:[],
+        search:[]
+    }
+  );
+ 
+  const updateFilter = (event) => {
+    const { name, value, checked } = event.target;
+    // console.log('name '+name)
+    setFilter((prevFilters) => {
+        const updatedFilter = checked
+          ? [...prevFilters[name], value]
+          : prevFilters[name].filter((filter) => filter !== value);
+  
+        const newFilters = {
+          ...prevFilters,
+          [name]: updatedFilter
+        };
+    // console.log(Filter)
+    // onFilterChange({
+    //   ...Filter,
+    //   [name]: selectedOptions
+    // });
+    console.log(newFilters)
+    return newFilters;
+  })};
+
+
+  const updateSearch =(text) => {
+    setFilter((prevFilters)=>{
+        const newFilters = {...prevFilters, search:[text]}
+        return newFilters;
+    })
+  }
   return (
     <Router>
       <div className="App">
-        <Navbar></Navbar>
+        <Navbar updateSearch={updateSearch}></Navbar>
         <Routes>
-          <Route exact path="/" element={<ProductPage></ProductPage>} />
+          <Route exact path="/" element={<ProductPage updateFilter={updateFilter} updateSearch={updateSearch} Filter={Filter}></ProductPage>} />
           <Route path="/favorites" element={<Favorites></Favorites>} />
         </Routes>
       </div>

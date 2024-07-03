@@ -7,7 +7,7 @@ function Sidebar({ updateFilter,Filter }) {
   };
 
   return (
-    <div className="sidebar">
+    <div className="sidebar" style={{width:'20vw'}}>
       <h2>Filters</h2>
       <div className="filter-group">
         <label>Category:</label>
@@ -19,10 +19,6 @@ function Sidebar({ updateFilter,Filter }) {
           <input type="checkbox" name="category" value="Clothing" onChange={handleFilterChange} />
           <label>Clothing</label>
         </div>
-        <div>
-          <input type="checkbox" name="category" value="Apparel" onChange={handleFilterChange} />
-          <label>Apparel</label>
-        </div>
       </div>
       <div className="filter-group">
         <label>Division:</label>
@@ -33,6 +29,10 @@ function Sidebar({ updateFilter,Filter }) {
         <div>
           <input type="checkbox" name="division" value="Women" onChange={handleFilterChange} />
           <label>Women</label>
+        </div>
+        <div>
+          <input type="checkbox" name="division" value="Unisex" onChange={handleFilterChange} />
+          <label>Unisex</label>
         </div>
       </div>
       <div className="filter-group">
