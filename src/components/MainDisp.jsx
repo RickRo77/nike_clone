@@ -1,7 +1,5 @@
 import React, { useState, useEffect } from 'react';
 import products from '../data/products.json';
-// import { useDispatch } from 'react-redux';
-// import { addToFavorites } from '../actions/favoritesActions';
 import ProductCard from './ProductCard';
 
 export default function MainDisp({ Filter }) {
@@ -28,6 +26,16 @@ export default function MainDisp({ Filter }) {
     setFilteredProducts(newFilteredProducts);
   }, [Filter]);
 
+
+  // const axios = require('axios');
+  // const url = "https://iitgoffice-my.sharepoint.com/:u:/g/personal/p_niraj_iitg_ac_in/EeJ3ZEP8VARIpyqCJUw8n3EBuDG8Re3ISvui-gFOdbadIA?e=qh40jU";
+  // axios.get(url)
+  //   .then(response => {
+  //       console.log(response.data);
+  //   })
+  //   .catch(error => {
+  //       console.error('Error fetching the JSON data:', error);
+  //   });
 
   return (
     <div style={{width:'80vw',overflowY:'scroll',display:'flex',flexWrap:'wrap',flexDirection:'row',justifyContent:'space-evenly'}}>

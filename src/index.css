@@ -23,7 +23,7 @@ nav{
   justify-content: flex-end;
   padding-right: 10%;
   height: 13vh;
-  background-color: aqua;
+  background-color: #181818 ;
 }
 
 .SidebarContainer{
@@ -73,6 +73,9 @@ img{
 @media (max-width: 600px) {
   .ProductCard{
     width: 60vw;
+  }
+  .filter-group label{
+    display: none;
   }
 }
 /*a {

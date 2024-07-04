@@ -32,7 +32,7 @@ function Sidebar({ updateFilter,Filter }) {
       <div style={{marginBottom:'20px'}}>
         <div className='Label' onClick={() => setShowDivision(!showDivision)}>Division</div>
         {showDivision && (
-          <div style={{backdropFilter:'brightness(0.5)'}}>
+          <div>
             <div className='CheckboxContainer'>
               <input type="checkbox" name="division" value="Men" onChange={handleFilterChange} />
               <label>Men</label>
