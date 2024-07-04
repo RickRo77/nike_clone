@@ -1,7 +1,7 @@
 :root {
   font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
-  font-weight: 400;
+  /* font-weight: 400; */
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);
@@ -11,11 +11,69 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+
+  overflow-y: hidden;
 }
 
 nav{
-  height: 10vh;
-  background-color: whitesmoke;
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
+  padding-right: 10%;
+  height: 13vh;
+  background-color: aqua;
+}
+
+.SidebarContainer{
+  width: 15vw;
+  padding: 20px;
+  background-color: #f8f9fa;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: Arial, sans-serif;
+  color: #242424;
+}
+.Label{
+  font-size: 18px;
+  font-weight: bold;
+  cursor: pointer;
+  display: block;
+  margin-bottom: 10px;
+}
+.CheckboxContainer{
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  label {
+    margin-left: 5px;
+  }
+}
+p{
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+img{
+  margin: 5%;
+}
+
+/* @media (max-width: 1600px) {
+  .ProductCard{
+    width: 30vw;
+  }
+} */
+ .ProductCard{
+  width: 22vw;
+ }
+@media (max-width: 1000px) {
+  .ProductCard{
+    width: 30vw;
+  }
+}
+@media (max-width: 600px) {
+  .ProductCard{
+    width: 60vw;
+  }
 }
 /*a {
   font-weight: 500;

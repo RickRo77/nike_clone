@@ -6,7 +6,7 @@ import SearchBar from './SearchBar';
 
 function ProductPage({updateFilter,updateSearch,Filter}) {
   return (
-    <div style={{display:'flex'}}>
+    <div style={{display:'flex',height:'85vh'}}>
       <Sidebar updateFilter={updateFilter} Filter={Filter}/>
       <MainDisp Filter={Filter} />
     </div>

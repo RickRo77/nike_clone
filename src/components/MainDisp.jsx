@@ -30,11 +30,11 @@ export default function MainDisp({ Filter }) {
 
 
   return (
-    <div style={{width:'70vw'}}>
+    <div style={{width:'80vw',overflowY:'scroll',display:'flex',flexWrap:'wrap',flexDirection:'row',justifyContent:'space-evenly'}}>
       {filteredProducts.length > 0 ? (
         filteredProducts.map((product, index) => (
           <div key={index}>
-            <ProductCard product={product}></ProductCard>
+            <ProductCard product={product} parent={'MainDisp'}></ProductCard>
           </div>
         ))
       ) : (

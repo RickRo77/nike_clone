@@ -6,16 +6,10 @@ import SearchBar from './SearchBar';
 
 function Navbar({updateSearch}){
   return (
-    // <nav>
-    //   <ul>
-    //     <li><Link to="/">Home</Link></li>
-    //     <li><Link to="/favorites">Favorites</Link></li>
-    //   </ul>
-    // </nav>
-    <nav style={{display:'flex'}}>
+    <nav>
       <SearchBar updateSearch={updateSearch}></SearchBar>
-      <button><a Link to='/'>Home</a></button>
-      <button><a Link to='/favorites'>Favorites</a></button>
+      <Link to='/'><button style={{marginLeft:'15px',padding: '10px 15px',fontSize: '16px',color: '#fff',backgroundColor: '#007bff',border: 'none',borderRadius: '4px',cursor: 'pointer',transition: 'background-color 0.3s'}}>Home</button></Link>
+      <Link to='/favorites'><button style={{marginLeft:'15px',padding: ' 10px 15px',fontSize: '16px',color: '#fff',backgroundColor: '#007bff',border: 'none',borderRadius: '4px',cursor: 'pointer',transition: 'background-color 0.3s'}}>Favorites</button></Link>
     </nav>
   );
 };

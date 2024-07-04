@@ -7,27 +7,19 @@ import ProductCard from './ProductCard';
 
 function Favorites(){
   const favorites = useSelector(state => state.favorites.favorites);
-  const dispatch = useDispatch();
-
-  const handleRemove = (productId) => {
-    console.log(productId)
-    dispatch(removeFromFavorites(productId));
-  };
+  // const dispatch = useDispatch();
 
   return (
-    <div className="favorites-page">
-      <h2>Favorites</h2>
-      <div className="product-list">
+    <div className="favorites-page" style={{height:'83vh',overflowY:'scroll',display:'flex',flexWrap:'wrap',flexDirection:'row',justifyContent:'space-evenly'}}>
         {favorites.map(product => (
           <div key={product.id}>
-            <ProductCard product={product}/>
+            <ProductCard product={product} parent={'Favorites'}/>
             {/* <div>{product.productName}</div> */}
             {/* {console.log(product.id)} */}
-            <button onClick={() => {dispatch(removeFromFavorites(product.articleNo));}}>Remove from Favorites</button>
+            {/* <button onClick={() => {dispatch(removeFromFavorites(product.articleNo));}}>Remove from Favorites</button> */}
           </div>
         ))}
       </div>
-    </div>
   );
 };
 
