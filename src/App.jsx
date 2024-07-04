@@ -4,6 +4,8 @@ import './App.css';
 import Favorites from './components/Favorites';
 import ProductPage from './components/ProductPage';
 import Navbar from './components/Navbar';
+import Login from './auth/Login';
+import Signup from './auth/Signup'
 
 function App() {
   const [Filter, setFilter] = useState(
@@ -51,6 +53,8 @@ function App() {
           <Route exact path="/" element={<ProductPage updateFilter={updateFilter} updateSearch={updateSearch} Filter={Filter}></ProductPage>} />
           <Route path="/favorites" element={<Favorites></Favorites>} />
         </Routes>
+        {/* <Login/>
+        <Signup/> */}
       </div>
     </Router>
   );

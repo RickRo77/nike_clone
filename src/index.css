@@ -20,16 +20,18 @@ nav{
   justify-content: flex-end;
   padding-right: 10%;
   height: 13vh;
-  background-color: #181818 ;
+  background-color: #242424 ;
 }
 
 .SidebarContainer{
   width: 15vw;
   padding: 20px;
-  background-color: #f8f9fa;
+  background-color: rgb(172 173 171);
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
   font-family: Arial, sans-serif;
   color: #242424;
+  border: transparent;border-width: 1px;border-style: double;border-radius: 7px;
+
 }
 .Label{
   font-size: 18px;

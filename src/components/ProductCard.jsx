@@ -15,7 +15,7 @@ function ProductCard({ product,parent}){
   };
 
   return (
-    <div className='ProductCard' style={{ border: '1px solid #ddd', padding: '10px', margin: '10px'}}>
+    <div className='ProductCard' style={{ border: '1px solid #ddd', borderRadius:'7px',padding: '10px', margin: '10px'}}>
       <h2>{product.productName}</h2>
       <img src={product.imageUrl} alt={product.productName} style={{ width: '90%' }} />
       {/* <p><strong>Company:</strong> {product.company}</p>
