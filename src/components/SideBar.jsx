@@ -12,7 +12,7 @@ function Sidebar({ updateFilter,Filter }) {
   const [showSubCategory, setShowSubCategory] = useState(false);
 
   return (
-    <div className='SidebarContainer'>
+    <div className='SidebarContainer' style={{height:'80vh',overflowY:'scroll'}}>
       <h2>Filters</h2>
       <div style={{marginBottom:'20px'}}>
         <div className='Label' onClick={() => setShowCategory(!showCategory)}>Category</div>
