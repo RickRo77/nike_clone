@@ -17,7 +17,7 @@ export default function SearchBar({updateSearch}){
             name="search"
             placeholder="Search..."
             onChange={handleSearchChange}
-            style={{width:'25vw',padding: '10px 15px',fontSize: '16px',backgroundColor:'rgb(172 173 171)',color: '#fff',border: 'none',borderRadius: '4px',transition: 'background-color 0.3s'}}
+            style={{padding: '10px 15px',fontSize: '16px',backgroundColor:'rgb(172 173 171)',color: '#fff',border: 'none',borderRadius: '4px',transition: 'background-color 0.3s'}}
         />
     </div>
     )

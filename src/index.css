@@ -66,6 +66,13 @@ img{
 .Signup input{
   margin: 10px;
 }
+#signpage{
+  display: flex;
+  justify-content: center;
+}
+.Signup{
+  width: 30vw;
+}
 
 /* @media (max-width: 1600px) {
   .ProductCard{
@@ -74,6 +81,9 @@ img{
 } */
  .ProductCard{
   width: 22vw;
+ }
+ #phone{
+  display: none;
  }
 @media (max-width: 1000px) {
   .ProductCard{
@@ -86,6 +96,26 @@ img{
   }
   .filter-group label{
     display: none;
+  }
+  #phone{
+    display: flex;
+  }
+  #pc{
+    display: none;
+  }
+  .sideNav img{
+    display: none;
+  }
+  .filter-group input{
+    width: 40vw;
+  }
+  #signpage{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  .Signup{
+    width: 50vw;
   }
 }
 

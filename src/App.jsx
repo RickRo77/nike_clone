@@ -59,10 +59,9 @@ function App() {
             <Route path="/favorites" element={<Favorites></Favorites>} />
           </Routes>
         </div>:
-        <div style={{display:'flex',justifyContent:'space-around'}}>
+        <div id="signpage">
           <Signup/>
           <Login/>
-          <p style={{width:'10vw'}}>Not much time to design :( sorry... I promise the main app is much better designed</p>
         </div>}
       </div>
     </Router>

@@ -17,7 +17,7 @@ const Signup = () => {
   };
 
   return (
-    <div className='Signup' style={{width:'30vw',margin:'5%',padding:'2%',borderColor:'white',borderStyle:'solid',borderWidth:'1px',borderRadius:'7px'}}>
+    <div className='Signup' style={{margin:'5%',padding:'2%',backgroundColor:'#2b2b2b',borderColor:'white',borderStyle:'solid',borderWidth:'1px',borderRadius:'7px'}}>
       <h2>Signup</h2>
       <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'column'}}>
         <input
