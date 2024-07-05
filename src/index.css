@@ -17,10 +17,17 @@ nav{
   flex-direction: row;
   flex-wrap: nowrap;
   align-items: center;
-  justify-content: flex-end;
-  padding-right: 10%;
+  justify-content: space-between;
+  padding-right: 5%;
   height: 13vh;
   background-color: #242424 ;
+}
+.sideNav{
+  display:flex;
+  flex-direction: row;
+  flex-wrap: nowrap;
+  align-items: center;
+  justify-content: flex-end;
 }
 
 .SidebarContainer{
@@ -56,6 +63,10 @@ img{
   margin: 5%;
 }
 
+.Signup input{
+  margin: 10px;
+}
+
 /* @media (max-width: 1600px) {
   .ProductCard{
     width: 30vw;
@@ -76,6 +87,64 @@ img{
   .filter-group label{
     display: none;
   }
+}
+
+
+
+
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-toggle {
+  background-color: #3498db;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+}
+
+.dropdown-menu {
+  /* width: 20vw; */
+  display: flex;
+  flex-direction: column;
+  position: absolute;
+  background-color: rgb(68, 68, 68);
+  box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+  padding: 10px;
+  z-index: 1;
+  top: 150%; /* Positions the dropdown below the button */
+  right: 0;
+}
+
+.dropdown-item {
+  display: flex;
+  justify-content: flex-start;
+  padding: 8px 0;
+}
+
+.dropdown-label {
+  font-weight: bold;
+}
+
+.dropdown-value {
+  margin-left: 10px;
+}
+
+.dropdown-logout {
+  background-color: #e74c3c;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  margin-top: 10px;
+  align-self: center;
+}
+
+.dropdown-logout:hover {
+  background-color: #c0392b;
 }
 /*a {
   font-weight: 500;

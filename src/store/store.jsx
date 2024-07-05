@@ -1,7 +1,7 @@
 // src/store.js
 import { configureStore, combineReducers } from '@reduxjs/toolkit';
 import favoritesReducer from '../reducers/favoritesReducer';
-import authReducer from '../auth/authSlice';
+import authReducer from '../reducers/authReducers';
 import { loadState, saveState } from '../utils/localStorage';
 
 const rootReducer = combineReducers({

@@ -1,24 +1,31 @@
 // src/components/Signup.js
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { signupUser } from './authSlice';
+import {SignupUser} from '../actions/authActions';
 
 const Signup = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
+  const [username, setUsername] = useState('');
   const dispatch = useDispatch();
-  const authStatus = useSelector((state) => state.auth.status);
-  const authError = useSelector((state) => state.auth.error);
+  // const authStatus = useSelector((state) => state.auth.status);
+  // const authError = useSelector((state) => state.auth.error);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(signupUser({ email, password }));
+    dispatch(SignupUser({ username, email, password }));
   };
 
   return (
-    <div>
+    <div className='Signup' style={{width:'30vw',margin:'5%',padding:'2%',borderColor:'white',borderStyle:'solid',borderWidth:'1px',borderRadius:'7px'}}>
       <h2>Signup</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'column'}}>
+        <input
+          type="username"
+          placeholder="username"
+          value={username}
+          onChange={(e) => setUsername(e.target.value)}
+        />
         <input
           type="email"
           placeholder="Email"
@@ -31,10 +38,10 @@ const Signup = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Signup</button>
+        <button style={{margin:'10px'}} type="submit">Signup</button>
       </form>
-      {authStatus === 'loading' && <p>Loading...</p>}
-      {authError && <p>{authError}</p>}
+      {/* {authStatus === 'loading' && <p>Loading...</p>}
+      {authError && <p>{authError}</p>} */}
     </div>
   );
 };

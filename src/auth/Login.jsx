@@ -1,24 +1,29 @@
 // src/components/Login.js
 import React, { useState } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { loginUser } from './authSlice';
+import {LoginUser} from '../actions/authActions';
 
 const Login = () => {
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const dispatch = useDispatch();
-  const authStatus = useSelector((state) => state.auth.status);
-  const authError = useSelector((state) => state.auth.error);
+  const auth = useSelector(state => state.auth);
+  // const authStatus = useSelector((state) => state.auth.status);
+  // const authError = useSelector((state) => state.auth.error);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    dispatch(loginUser({ email, password }));
+    if(auth.email===email &&auth.password===password)
+      dispatch(LoginUser({ email, password }));
+    else
+      alert('Wrong Login Credentials')
   };
 
+  console.log(auth)
   return (
-    <div>
+    <div className='Signup' style={{width:'30vw',margin:'5%',padding:'2%',borderColor:'white',borderStyle:'solid',borderWidth:'1px',borderRadius:'7px'}}>
       <h2>Login</h2>
-      <form onSubmit={handleSubmit}>
+      <form onSubmit={handleSubmit} style={{display:'flex', flexDirection:'column'}}>
         <input
           type="email"
           placeholder="Email"
@@ -31,10 +36,12 @@ const Login = () => {
           value={password}
           onChange={(e) => setPassword(e.target.value)}
         />
-        <button type="submit">Login</button>
+        <button style={{margin:'10px'}} type="submit">Login</button>
       </form>
-      {authStatus === 'loading' && <p>Loading...</p>}
-      {authError && <p>{authError}</p>}
+      {/* {authStatus === 'loading' && <p>Loading...</p>}
+      {authError && <p>{authError}</p>} */}
+
+      {/* <h1>{auth.loggedIn?auth.loggedIn:'loading'}</h1> */}
     </div>
   );
 };
